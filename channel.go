@@ -5,9 +5,9 @@ import (
 )
 
 func main() {
-	list := []rune{'h', 'e', 'l', 'l', 'o'}
+	list := []string{"h", "e", "l", "l", "o"}
 
-	message := make(chan rune)
+	message := make(chan string)
 
 	// populate the channel with our message on rune at a time
 	go func() {
@@ -19,6 +19,6 @@ func main() {
 
 	// consume the items in the channel and print them
 	for m := range message {
-		fmt.Print(string(m))
+		fmt.Print(m)
 	}
 }
